@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Farhana Akter | Machine Learning Engineer</title>
+<meta name="description" content="Farhana Akter: Computer & Communication Engineering graduate (IIUC) focused on machine learning, model evaluation, data & feature engineering and IoT. Two conference papers.">
+<meta name="theme-color" content="#0a0e1f">
+<meta property="og:title" content="Farhana Akter | Machine Learning Engineer">
+<meta property="og:description" content="Machine learning, model evaluation, data & feature engineering and IoT. Two conference papers.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236d7cff'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'%3EFA%3C/text%3E%3C/svg%3E">
+<script>
+  // Apply saved theme before paint (default: dark)
+  try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  /* ---------- Theme tokens (dark is default) ---------- */
+  :root, :root[data-theme="dark"]{
+    --bg:#0a0e1f; --bg-2:#0e1328; --surface:#121833; --surface-2:#18203f; --text:#e9ecff; --muted:#9aa3c4; --faint:#6b7397;
+    --line:#222a4d; --accent:#7c8cff; --accent-2:#4fd1e0; --accent-soft:rgba(124,140,255,.12); --shadow:0 14px 40px rgba(0,0,0,.35);
+    --nav-bg:rgba(10,14,31,.78); color-scheme: dark;
+  }
+  :root[data-theme="light"]{
+    --bg:#f7f8fc; --bg-2:#ffffff; --surface:#ffffff; --surface-2:#f0f2fa; --text:#121735; --muted:#555d7d; --faint:#8a91ad;
+    --line:#e3e6f2; --accent:#4f5fe8; --accent-2:#0ea5b7; --accent-soft:rgba(79,95,232,.09); --shadow:0 12px 32px rgba(18,23,53,.08);
+    --nav-bg:rgba(247,248,252,.82); color-scheme: light;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Segoe UI",Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .3s ease,color .3s ease}
+  a{color:var(--accent);text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .ic{width:18px;height:18px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+
+  /* ---------- Nav ---------- */
+  header.nav{position:sticky;top:0;z-index:30;background:var(--nav-bg);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;color:var(--text);font-weight:700;letter-spacing:.2px}
+  .brand .logo{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;font-size:.8rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+  .links{display:flex;gap:4px;align-items:center}
+  .links a{color:var(--muted);font-weight:500;font-size:.93rem;padding:8px 12px;border-radius:9px;transition:color .2s,background .2s}
+  .links a:hover{color:var(--text);background:var(--accent-soft)}
+  .links a.active{color:var(--text)}
+  .links a.active::after{content:"";display:block;height:2px;margin-top:2px;border-radius:2px;background:var(--accent)}
+  .toggle{margin-left:8px;position:relative;width:58px;height:30px;border-radius:999px;border:1px solid var(--line);background:var(--surface-2);cursor:pointer;padding:0;color:var(--muted)}
+  .toggle .knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--accent);display:grid;place-items:center;color:#fff;transition:transform .3s ease}
+  .toggle .knob svg{width:13px;height:13px}
+  :root[data-theme="light"] .toggle .knob{transform:translateX(28px)}
+  .toggle .sun{display:none} :root[data-theme="light"] .toggle .sun{display:block} :root[data-theme="light"] .toggle .moon{display:none}
+  .toggle:focus-visible,.btn:focus-visible,.links a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  @media (max-width:780px){.links a.hide-sm{display:none}}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:96px 0 84px;border-bottom:1px solid var(--line)}
+  .hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.5}
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(800px 380px at 15% 10%,var(--accent-soft),transparent 70%)}
+  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.45fr .85fr;gap:48px;align-items:center}
+  .hero .wrap>*{min-width:0}
+  @media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding:64px 0 60px}}
+  .status{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;color:var(--muted);border:1px solid var(--line);background:var(--surface);padding:6px 12px;border-radius:999px;margin-bottom:22px}
+  .dot{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 4px rgba(52,211,153,.18)}
+  .hello{font-size:.95rem;color:var(--accent);font-weight:600;margin:0 0 6px}
+  h1{font-size:clamp(2.5rem,6vw,4rem);line-height:1.05;margin:0 0 12px;letter-spacing:-1.2px;font-weight:800}
+  .role{font-size:clamp(1.1rem,2.4vw,1.45rem);font-weight:600;margin:0 0 18px;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{font-size:1.06rem;color:var(--muted);max-width:600px;margin:0 0 30px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:12px 18px;border-radius:11px;font-weight:600;font-size:.95rem;border:1px solid var(--line);color:var(--text);background:var(--surface);transition:transform .15s,box-shadow .2s,border-color .2s}
+  .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .profile{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}
+  .profile-top{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .avatar{width:72px;height:72px;border-radius:18px;display:grid;place-items:center;font-size:1.6rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2));flex:none}
+  .profile-top b{display:block;font-size:1.08rem}
+  .profile-top span{color:var(--muted);font-size:.9rem}
+  .kv{display:grid;gap:12px;margin:0;padding:18px 0 0;border-top:1px solid var(--line)}
+  .kv>div{display:flex;gap:12px;align-items:flex-start;font-size:.92rem}
+  .kv svg{color:var(--accent);margin-top:3px}
+  .kv b{display:block;font-weight:600}
+  .kv span{color:var(--muted)}
+
+  /* ---------- Sections ---------- */
+  section{padding:84px 0}
+  section.alt{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sec-head{margin-bottom:36px}
+  .sec-label{display:flex;align-items:center;gap:10px;font-size:.8rem;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+  .sec-label .n{color:var(--faint)}
+  .sec-label::after{content:"";height:1px;width:48px;background:var(--line)}
+  h2{font-size:clamp(1.7rem,3.2vw,2.3rem);margin:0;letter-spacing:-.5px;line-height:1.2}
+  .sec-sub{color:var(--muted);margin:10px 0 0;max-width:640px}
+
+  .about{display:grid;grid-template-columns:1.35fr 1fr;gap:44px}
+  .about>*{min-width:0}
+  @media (max-width:860px){.about{grid-template-columns:1fr}}
+  .about p{color:var(--muted);margin:0 0 16px}
+  .about p strong{color:var(--text);font-weight:600}
+  .focus{display:grid;gap:12px}
+  .focus-item{display:flex;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+  section.alt .focus-item{background:var(--bg)}
+  .focus-item .fi{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);flex:none}
+  .focus-item b{display:block;font-size:.98rem}
+  .focus-item span{color:var(--muted);font-size:.9rem}
+
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .cards>*{min-width:0}
+  @media (max-width:860px){.cards{grid-template-columns:1fr}}
+  .card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s}
+  .card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 40%,var(--line));box-shadow:var(--shadow)}
+  .card .meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:10px}
+  .badge{font-size:.72rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:5px 10px;border-radius:999px}
+  .card .num{font-size:.8rem;color:var(--faint)}
+  .card h3{margin:0 0 10px;font-size:1.14rem;line-height:1.4}
+  .card p{color:var(--muted);margin:0 0 14px}
+  .card ul{margin:0 0 18px;padding:0;list-style:none;color:var(--muted)}
+  .card li{position:relative;padding-left:20px;margin:7px 0}
+  .card li::before{content:"";position:absolute;left:2px;top:.68em;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+  .chip{font-size:.8rem;font-weight:500;padding:5px 11px;border-radius:8px;background:var(--surface-2);color:var(--text);border:1px solid var(--line)}
+
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .skills>*{min-width:0}
+  @media (max-width:900px){.skills{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.skills{grid-template-columns:1fr}}
+  .skill-group{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+  section.alt .skill-group{background:var(--bg)}
+  .skill-group h3{margin:0 0 14px;font-size:.98rem;display:flex;gap:10px;align-items:center}
+  .skill-group h3 svg{color:var(--accent)}
+
+  .timeline{position:relative;padding-left:28px}
+  .timeline::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--line)}
+  .tl-item{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:16px}
+  .tl-item::before{content:"";position:absolute;left:-28px;top:24px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+  .tl-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+  .tl-item h3{margin:0;font-size:1.04rem}
+  .when{color:var(--faint);font-size:.85rem}
+  .org{color:var(--accent);font-weight:600;font-size:.92rem;margin-top:2px}
+  .tl-item p{color:var(--muted);margin:8px 0 0}
+
+  .edu{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .edu>*{min-width:0}
+  @media (max-width:860px){.edu{grid-template-columns:1fr}}
+  .edu h3{font-size:.95rem;color:var(--muted);font-weight:600;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+  .edu h3 svg{color:var(--accent)}
+  .list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .list li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  section.alt .list li{background:var(--bg)}
+  .list li b{display:block;font-weight:600}
+  .list li span{display:block;color:var(--muted);font-size:.9rem}
+
+  .contact-box{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--surface)),var(--surface));border:1px solid var(--line);border-radius:22px;padding:48px 32px;text-align:center}
+  .contact-box h2{margin-bottom:12px}
+  .contact-box p{color:var(--muted);max-width:560px;margin:0 auto 28px}
+  .contact-box .cta{justify-content:center}
+
+  footer{padding:30px 0;border-top:1px solid var(--line);color:var(--faint);font-size:.88rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+  footer .social{display:flex;gap:10px}
+  footer .social a{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted)}
+  footer .social a:hover{color:var(--text);border-color:var(--accent)}
+
+  h1,h2,h3,p,li{overflow-wrap:break-word}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></symbol>
+  <symbol id="i-brain" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6.8 10.3 11M7 17.2l3.3-4.2M13.7 11 17 6.8M13.7 13l3.3 4.2"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+  <symbol id="i-net" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-3h14v3"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 8 5-3 5 3-1.5-8"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="logo">FA</span>Farhana Akter</a>
+    <nav class="links" aria-label="Main">
+      <a href="#about" class="hide-sm">About</a>
+      <a href="#research">Research</a>
+      <a href="#skills" class="hide-sm">Skills</a>
+      <a href="#experience" class="hide-sm">Experience</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch theme">
+        <span class="knob">
+          <svg class="ic moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="ic sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ===== HERO ===== -->
+  <div class="hero">
+    <canvas id="net" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div>
+        <span class="status"><span class="dot"></span>Available for ML, data &amp; AI roles · Remote</span>
+        <p class="hello">Hello, I'm</p>
+        <h1>Farhana Akter</h1>
+        <p class="role">Machine Learning Engineer · Model Evaluation · Data &amp; Feature Engineering</p>
+        <p class="lead">Computer &amp; Communication Engineering graduate with published research in applied machine learning, building classification pipelines, comparing feature-selection methods and evaluating models, backed by hands-on IoT and embedded systems experience.</p>
+        <div class="cta">
+          <a class="btn primary" href="Farhana_Akter_Resume.pdf" target="_blank" rel="noopener"><svg class="ic"><use href="#i-download"/></svg>Download Resume</a>
+          <a class="btn" href="#research"><svg class="ic"><use href="#i-doc"/></svg>View Research</a>
+          <a class="btn" href="https://www.linkedin.com/in/farhana-akter-nusrat" target="_blank" rel="noopener"><svg class="ic"><use href="#i-in"/></svg>LinkedIn</a>
+        </div>
+      </div>
+      <aside class="profile" aria-label="Profile summary">
+        <div class="profile-top">
+          <div class="avatar">FA</div>
+          <div><b>Farhana Akter</b><span>Aspiring ML Engineer</span></div>
+        </div>
+        <div class="kv">
+          <div><svg class="ic"><use href="#i-doc"/></svg><div><b>2 conference papers</b><span>Machine learning · Embedded systems</span></div></div>
+          <div><svg class="ic"><use href="#i-target"/></svg><div><b>Focus</b><span>Model evaluation, feature engineering</span></div></div>
+          <div><svg class="ic"><use href="#i-cap"/></svg><div><b>B.Sc. in CCE</b><span>International Islamic University Chittagong</span></div></div>
+          <div><svg class="ic"><use href="#i-pin"/></svg><div><b>Feni, Bangladesh</b><span>Open to remote work</span></div></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="alt">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <p class="sec-label"><span class="n mono">01</span>About</p>
+        <h2>Turning data into reliable decisions</h2>
+      </div>
+      <div class="about">
+        <div>
+          <p>I'm a Computer and Communication Engineering graduate of <strong>International Islamic University Chittagong</strong>, focused on machine learning: building models that recognise patterns, classify problems and support better decisions.</p>
+          <p>My main ML work is a conference paper on <strong>phishing website detection</strong>. I worked on a classification pipeline and systematically compared several feature-selection methods to find the most informative features and improve detection performance.</p>
+          <p>I also bring a hardware and systems background from an <strong>ESP32-based smart attendance system</strong> (my second paper) and a three-month IoT training program at mPair. That lets me think about intelligent systems end to end, from collecting data on devices to analysing it and building models.</p>
+        </div>
+        <div class="focus">
+          <div class="focus-item"><div class="fi"><svg class="ic"><use href="#i-brain"/></svg></div><div><b>Machine Learning</b><span>Classification, feature selection, model evaluation</span></div></div>
+          <div class="focus-item"><div class="fi"><svg class="ic"><use href="#i-chip"/></svg></div><div><b>IoT &amp; Embedded</b><span>ESP32 and Arduino prototyping and testing</span></div></div>
+          <div class="focus-item"><div class="fi"><svg class="ic"><use href="#i-doc"/></svg></div><div><b>Research &amp; Writing</b><span>Methodology, experiments and technical documentation</span></div></div>
+          <div class="focus-item"><div class="fi"><svg class="ic"><use href="#i-globe"/></svg></div><div><b>Languages</b><span>Bangla (native) · English (professional)</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESEARCH ===== -->
+  <section id="research">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <p class="sec-label"><span class="n mono">02</span>Research &amp; Projects</p>
+        <h2>Published work</h2>
+        <p class="sec-sub">Two co-authored conference papers spanning applied machine learning and embedded systems.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="meta"><span class="badge">Machine Learning</span><span class="num mono">Paper 01</span></div>
+          <h3>A Machine Learning Approach for Phishing Website Detection with Comprehensive Multi-Method Feature Selection</h3>
+          <p>A classification pipeline that separates phishing websites from legitimate ones.</p>
+          <ul>
+            <li>Covered data preparation, feature selection, model training and evaluation</li>
+            <li>Compared multiple feature-selection methods side by side to identify the most informative website features</li>
+            <li>Evaluated models with consistent metrics and documented the full methodology</li>
+          </ul>
+          <div class="chips"><span class="chip">Classification</span><span class="chip">Feature Selection</span><span class="chip">Model Evaluation</span><span class="chip">Cybersecurity</span></div>
+          <!-- Add the paper link when available:
+          <a class="btn" style="margin-top:18px;align-self:flex-start" href="https://doi.org/..." target="_blank" rel="noopener">Read paper</a> -->
+        </article>
+        <article class="card">
+          <div class="meta"><span class="badge">IoT · Embedded</span><span class="num mono">Paper 02</span></div>
+          <h3>Smart Portable Subject-Based Attendance System for University Students Using ESP32</h3>
+          <p>A low-cost, portable device that records attendance per subject for university classes.</p>
+          <ul>
+            <li>Designed, built, tested and debugged the ESP32-based hardware and firmware</li>
+            <li>Replaced error-prone paper attendance with automatic, per-subject records</li>
+            <li>Documented the design, testing and results for publication</li>
+          </ul>
+          <div class="chips"><span class="chip">ESP32</span><span class="chip">Embedded Systems</span><span class="chip">IoT</span><span class="chip">Data Capture</span></div>
+          <!-- Add the paper link when available -->
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="alt">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <p class="sec-label"><span class="n mono">03</span>Skills</p>
+        <h2>Technical toolkit</h2>
+      </div>
+      <div class="skills">
+        <div class="skill-group"><h3><svg class="ic"><use href="#i-brain"/></svg>Machine Learning</h3><div class="chips"><span class="chip">Classification</span><span class="chip">Feature Selection</span><span class="chip">Feature Engineering</span><span class="chip">Model Evaluation</span><span class="chip">Data Analysis</span></div></div>
+        <div class="skill-group"><h3><svg class="ic"><use href="#i-code"/></svg>Programming</h3><div class="chips"><span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">Angular</span></div></div>
+        <div class="skill-group"><h3><svg class="ic"><use href="#i-chip"/></svg>IoT &amp; Embedded</h3><div class="chips"><span class="chip">ESP32</span><span class="chip">Arduino</span><span class="chip">Embedded Systems</span><span class="chip">Internet of Things</span></div></div>
+        <div class="skill-group"><h3><svg class="ic"><use href="#i-net"/></svg>Networking</h3><div class="chips"><span class="chip">Cisco Networking</span></div></div>
+        <div class="skill-group"><h3><svg class="ic"><use href="#i-chart"/></svg>Productivity</h3><div class="chips"><span class="chip">Microsoft Excel</span><span class="chip">Microsoft Word</span><span class="chip">Microsoft PowerPoint</span></div></div>
+        <div class="skill-group"><h3><svg class="ic"><use href="#i-users"/></svg>Professional</h3><div class="chips"><span class="chip">Research &amp; Data Collection</span><span class="chip">Technical Writing</span><span class="chip">Problem Solving</span><span class="chip">Teamwork</span><span class="chip">Leadership</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <p class="sec-label"><span class="n mono">04</span>Experience</p>
+        <h2>Training &amp; leadership</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-head"><h3>IoT Training Program</h3><span class="when mono">Feb 2025 – Apr 2025</span></div>
+          <div class="org">mPair Technologies Ltd.</div>
+          <p>Three-month structured program building and testing microcontroller-based prototypes with Arduino and ESP32: sensors, connectivity and embedded programming.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-head"><h3>Disciplinary Committee Convenor</h3><span class="when mono">2024 – 2025</span></div>
+          <div class="org">CCE Club, IIUC</div>
+          <p>Led the club's disciplinary committee, coordinating members and maintaining standards at club activities and events.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-head"><h3>Member, Event Management</h3></div>
+          <div class="org">CCE Club, IIUC</div>
+          <p>Helped plan, coordinate and run departmental events, workshops and seminars.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education" class="alt">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <p class="sec-label"><span class="n mono">05</span>Education &amp; Certifications</p>
+        <h2>Learning path</h2>
+      </div>
+      <div class="edu">
+        <div>
+          <h3><svg class="ic"><use href="#i-cap"/></svg>Education</h3>
+          <ul class="list">
+            <li><b>B.Sc. in Computer and Communication Engineering</b><span>International Islamic University Chittagong · 2022 – 2026 · CGPA 3.38 / 4.00</span></li>
+            <li><b>H.S.C. (Science)</b><span>Imam Gazzali Degree College · GPA 4.58 / 5.00</span></li>
+            <li><b>S.S.C. (Science)</b><span>Chittagong Power Station High School · GPA 4.50 / 5.00</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3><svg class="ic"><use href="#i-award"/></svg>Certifications &amp; workshops</h3>
+          <ul class="list">
+            <li><b>IoT Training Program</b><span>mPair Technologies Ltd. · Apr 2025</span></li>
+            <li><b>Programming with Python: Hands-on for Beginners</b><span>IEEE IIUC Student Branch</span></li>
+            <li><b>Engineering Mindset: Crafting Impactful Research</b><span>Research workshop</span></li>
+            <li><b>Game Development Workshop</b><span>IEEE IIUC Student Branch · Aug 2022</span></li>
+            <li><b>Video Editing Workshop</b><span>CCE Club, IIUC</span></li>
+            <li><b>Conferences &amp; competitions</b><span>ICISET 2022 (participant) · Inter-University Idea Generation Competition, Tech Fest 2025</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="wrap reveal">
+      <div class="contact-box">
+        <p class="sec-label" style="justify-content:center"><span class="n mono">06</span>Contact</p>
+        <h2>Let's build something together</h2>
+        <p>I'm open to entry-level roles, internships and remote contracts in machine learning, data science and AI, and always happy to talk about ML research, AI evaluation or IoT.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:nusratfarhana358@gmail.com"><svg class="ic"><use href="#i-mail"/></svg>nusratfarhana358@gmail.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/farhana-akter-nusrat" target="_blank" rel="noopener"><svg class="ic"><use href="#i-in"/></svg>LinkedIn</a>
+          <a class="btn" href="Farhana_Akter_Resume.pdf" target="_blank" rel="noopener"><svg class="ic"><use href="#i-download"/></svg>Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Farhana Akter · Feni, Bangladesh</span>
+    <div class="social">
+      <a href="mailto:nusratfarhana358@gmail.com" aria-label="Email"><svg class="ic"><use href="#i-mail"/></svg></a>
+      <a href="https://www.linkedin.com/in/farhana-akter-nusrat" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ic"><use href="#i-in"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ---- Theme switch (dark default, remembered per visitor) ----
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('themeToggle'), meta = document.querySelector('meta[name="theme-color"]');
+    function sync() {
+      var light = root.getAttribute('data-theme') === 'light';
+      btn.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
+      if (meta) meta.setAttribute('content', light ? '#f7f8fc' : '#0a0e1f');
+    }
+    sync();
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      sync();
+      if (window.__redraw) window.__redraw();
+    });
+  })();
+
+  // ---- Reveal on scroll ----
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: .1 });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+
+  // ---- Active nav link ----
+  (function () {
+    var links = [].slice.call(document.querySelectorAll('.links a'));
+    var map = {}; links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { links.forEach(function (a) { a.classList.remove('active'); }); var a = map[e.target.id]; if (a) a.classList.add('active'); }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('section[id]').forEach(function (s) { io.observe(s); });
+  })();
+
+  // ---- Hero network background ----
+  (function () {
+    var c = document.getElementById('net'); if (!c) return;
+    var ctx = c.getContext('2d'), reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, W, H, pts = [];
+    function size() {
+      var r = c.getBoundingClientRect(), d = window.devicePixelRatio || 1;
+      W = r.width; H = r.height; c.width = W * d; c.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0);
+      var n = Math.min(55, Math.floor(W * H / 17000));
+      pts = Array.from({ length: n }, function () { return { x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3 }; });
+    }
+    function frame(move) {
+      ctx.clearRect(0, 0, W, H);
+      var col = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#7c8cff';
+      if (move) pts.forEach(function (p) { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1; });
+      ctx.strokeStyle = col; ctx.fillStyle = col;
+      for (var i = 0; i < pts.length; i++) for (var j = i + 1; j < pts.length; j++) {
+        var a = pts[i], b = pts[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < 130) { ctx.globalAlpha = (1 - d / 130) * .3; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+      }
+      ctx.globalAlpha = .65; pts.forEach(function (p) { ctx.beginPath(); ctx.arc(p.x, p.y, 2, 0, Math.PI * 2); ctx.fill(); }); ctx.globalAlpha = 1;
+    }
+    window.__redraw = function () { frame(false); };
+    size(); addEventListener('resize', function () { size(); frame(false); });
+    if (reduce) { frame(false); return; }
+    (function loop() { frame(true); requestAnimationFrame(loop); })();
+  })();
+</script>
+</body>
+</html>
