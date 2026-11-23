@@ -31,8 +31,8 @@
   }
 
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth;overflow-x:hidden}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Segoe UI",Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .3s ease,color .3s ease}
+  html{scroll-behavior:smooth;overflow-x:clip}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Segoe UI",Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip;transition:background-color .3s ease,color .3s ease}
   a{color:var(--accent);text-decoration:none}
   .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
   .ic{width:18px;height:18px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -44,10 +44,10 @@
   .brand{display:flex;align-items:center;gap:10px;color:var(--text);font-weight:700;letter-spacing:.2px}
   .brand .logo{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;font-size:.8rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
   .links{display:flex;gap:4px;align-items:center}
-  .links a{color:var(--muted);font-weight:500;font-size:.93rem;padding:8px 12px;border-radius:9px;transition:color .2s,background .2s}
+  .links a{position:relative;color:var(--muted);font-weight:500;font-size:.93rem;padding:8px 12px;border-radius:9px;transition:color .2s,background .2s}
   .links a:hover{color:var(--text);background:var(--accent-soft)}
   .links a.active{color:var(--text)}
-  .links a.active::after{content:"";display:block;height:2px;margin-top:2px;border-radius:2px;background:var(--accent)}
+  .links a.active::after{content:"";position:absolute;left:12px;right:12px;bottom:3px;height:2px;border-radius:2px;background:var(--accent)}
   .toggle{margin-left:8px;position:relative;width:58px;height:30px;border-radius:999px;border:1px solid var(--line);background:var(--surface-2);cursor:pointer;padding:0;color:var(--muted)}
   .toggle .knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--accent);display:grid;place-items:center;color:#fff;transition:transform .3s ease}
   .toggle .knob svg{width:13px;height:13px}
@@ -85,7 +85,7 @@
   .kv span{color:var(--muted)}
 
   /* ---------- Sections ---------- */
-  section{padding:84px 0}
+  section{padding:84px 0;scroll-margin-top:-8px}
   section.alt{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .sec-head{margin-bottom:36px}
   .sec-label{display:flex;align-items:center;gap:10px;font-size:.8rem;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
@@ -448,6 +448,7 @@
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         if (e.isIntersecting) { links.forEach(function (a) { a.classList.remove('active'); }); var a = map[e.target.id]; if (a) a.classList.add('active'); }
+        else if (e.target.id === 'about' && e.boundingClientRect.top > 0) { links.forEach(function (a) { a.classList.remove('active'); }); }
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     document.querySelectorAll('section[id]').forEach(function (s) { io.observe(s); });
