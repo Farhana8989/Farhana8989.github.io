@@ -111,7 +111,9 @@
   @media (max-width:860px){.cards{grid-template-columns:1fr}}
   .card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s}
   .card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 40%,var(--line));box-shadow:var(--shadow)}
-  .card .meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:10px}
+  .card .meta{display:flex;flex-wrap:wrap;align-items:center;margin-bottom:16px;gap:8px}
+  .card .meta .num{margin-left:auto}
+  .list b a{color:inherit;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
   .badge{font-size:.72rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:5px 10px;border-radius:999px}
   .card .num{font-size:.8rem;color:var(--faint)}
   .card h3{margin:0 0 10px;font-size:1.14rem;line-height:1.4}
@@ -234,7 +236,7 @@
           <div><b>Farhana Akter</b><span>Aspiring ML Engineer</span></div>
         </div>
         <div class="kv">
-          <div><svg class="ic"><use href="#i-doc"/></svg><div><b>2 conference papers</b><span>Machine learning · Embedded systems</span></div></div>
+          <div><svg class="ic"><use href="#i-doc"/></svg><div><b>2 conference papers</b><span>ML paper presented at ICISET 2026</span></div></div>
           <div><svg class="ic"><use href="#i-target"/></svg><div><b>Focus</b><span>Model evaluation, feature engineering</span></div></div>
           <div><svg class="ic"><use href="#i-cap"/></svg><div><b>B.Sc. in CCE</b><span>International Islamic University Chittagong</span></div></div>
           <div><svg class="ic"><use href="#i-pin"/></svg><div><b>Feni, Bangladesh</b><span>Open to remote work</span></div></div>
@@ -276,15 +278,16 @@
       </div>
       <div class="cards">
         <article class="card">
-          <div class="meta"><span class="badge">Machine Learning</span><span class="num mono">Paper 01</span></div>
+          <div class="meta"><span class="badge">Machine Learning</span><span class="badge">Presented · ICISET 2026</span><span class="num mono">Paper 01</span></div>
           <h3>A Machine Learning Approach for Phishing Website Detection with Comprehensive Multi-Method Feature Selection</h3>
-          <p>A classification pipeline that separates phishing websites from legitimate ones.</p>
+          <p>A classification pipeline that separates phishing websites from legitimate ones. Presented at ICISET 2026 (IIUC, Nov 8–10, 2026; technical co-sponsor: IEEE Bangladesh Section), Paper ID 328.</p>
           <ul>
             <li>Covered data preparation, feature selection, model training and evaluation</li>
             <li>Compared multiple feature-selection methods side by side to identify the most informative website features</li>
             <li>Evaluated models with consistent metrics and documented the full methodology</li>
           </ul>
           <div class="chips"><span class="chip">Classification</span><span class="chip">Feature Selection</span><span class="chip">Model Evaluation</span><span class="chip">Cybersecurity</span></div>
+          <a class="btn" style="margin-top:18px;align-self:flex-start" href="ICISET2026_Presentation_Certificate.pdf" target="_blank" rel="noopener"><svg class="ic"><use href="#i-award"/></svg>View presentation certificate</a>
           <!-- Add the paper link when available:
           <a class="btn" style="margin-top:18px;align-self:flex-start" href="https://doi.org/..." target="_blank" rel="noopener">Read paper</a> -->
         </article>
@@ -368,12 +371,13 @@
         <div>
           <h3><svg class="ic"><use href="#i-award"/></svg>Certifications &amp; workshops</h3>
           <ul class="list">
+            <li><b><a href="ICISET2026_Presentation_Certificate.pdf" target="_blank" rel="noopener">Certificate of Presentation, ICISET 2026</a></b><span>International Islamic University Chittagong · Nov 2026 · ML phishing detection paper</span></li>
             <li><b>IoT Training Program</b><span>mPair Technologies Ltd. · Apr 2025</span></li>
             <li><b>Programming with Python: Hands-on for Beginners</b><span>IEEE IIUC Student Branch</span></li>
             <li><b>Engineering Mindset: Crafting Impactful Research</b><span>Research workshop</span></li>
             <li><b>Game Development Workshop</b><span>IEEE IIUC Student Branch · Aug 2022</span></li>
             <li><b>Video Editing Workshop</b><span>CCE Club, IIUC</span></li>
-            <li><b>Conferences &amp; competitions</b><span>ICISET 2022 (participant) · Inter-University Idea Generation Competition, Tech Fest 2025</span></li>
+            <li><b>Conferences &amp; competitions</b><span>ICISET 2026 (presenter) · ICISET 2022 (participant) · Inter-University Idea Generation Competition, Tech Fest 2025</span></li>
           </ul>
         </div>
       </div>
